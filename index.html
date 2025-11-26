@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Multijoueur 🏎️</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #1a1a2e;
+            font-family: Arial, sans-serif;
+            color: white;
+            overflow: hidden;
+        }
+        
+        #gameContainer {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        #gameCanvas {
+            background: #162447;
+            display: block;
+        }
+        
+        #menu {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            min-width: 300px;
+        }
+        
+        #hud {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        input {
+            width: 200px;
+        }
+        
+        button {
+            background: #e43f5a;
+            color: white;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        button:hover {
+            background: #f37172;
+        }
+    </style>
+</head>
+<body>
+    <div id="gameContainer">
+        <canvas id="gameCanvas"></canvas>
+        
+        <div id="menu">
+            <h1>🏎️ COURSE MULTIJOUEUR</h1>
+            <input type="text" id="pseudoInput" placeholder="Ton pseudo" value="Joueur">
+            <input type="color" id="colorInput" value="#ff0000">
+            <br>
+            <button id="playButton">🎮 JOUER !</button>
+            <div id="status">Prêt à jouer !</div>
+        </div>
+        
+        <div id="hud" class="hidden">
+            <div>⚡ <span id="speed">0</span> km/h</div>
+            <div>👥 <span id="players">1</span> joueurs</div>
+            <div>📍 X:<span id="posX">0</span> Y:<span id="posY">0</span></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
